@@ -66,12 +66,6 @@ export default function Hero() {
       textAlign: 'center'
     }}>
       <div className="wrap" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, zIndex: 10 }}>
-        {/* Eyebrow */}
-        <div className="hero-eyebrow-capsule" style={{ marginBottom: '24px' }}>
-          <span className="badge-pulse"></span>
-          <span className="badge-text">TxODDS Hackathon: Consumer &amp; Fan Experiences</span>
-        </div>
-
         {/* Headline */}
         <h1 style={{ lineHeight: 1.1, textAlign: 'center', margin: 0 }}>
           <span style={{ fontFamily: 'var(--font-serif)', fontWeight: 700, fontStyle: 'italic', textTransform: 'none', color: '#fff', fontSize: 'min(9vw, 76px)', letterSpacing: '0.01em', display: 'block' }}>Fan Influence,</span>

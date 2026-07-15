@@ -14,7 +14,7 @@ export default function ScrollReveal() {
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.feature-card, .faq-item, .cta-band, .component-showcase, .tuner-card, .command-console-card').forEach((el) => {
+    document.querySelectorAll('.feature-card, .faq-item, .cta-band, .component-showcase, .tuner-card').forEach((el) => {
       observer.observe(el);
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';

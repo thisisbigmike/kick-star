@@ -231,9 +231,7 @@ export default function Header() {
           
           <nav className="nav-links">
             <a href="#features">Features</a>
-            <a href="#commands">Commands</a>
-            <a href="#demo">Chat Simulator</a>
-            <a href="#tuner">TxLINE Tuner</a>
+            <a href="#tuner">Commentary Tuner</a>
             
             {/* Authenticated State Display */}
             {authenticated ? (
@@ -327,9 +325,7 @@ export default function Header() {
             <div className="mobile-nav" id="mobile-nav">
               <nav className="nav-links-mobile" aria-label="Mobile">
                 <a href="#features">Features</a>
-                <a href="#commands">Commands</a>
-                <a href="#demo">Chat Simulator</a>
-                <a href="#tuner">TxLINE Tuner</a>
+                <a href="#tuner">Commentary Tuner</a>
                 
                 {authenticated ? (
                   <div className="mono" style={{ fontSize: 13, color: 'var(--ink-secondary)', padding: '10px 14px', background: 'var(--bg-surface-raised)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>

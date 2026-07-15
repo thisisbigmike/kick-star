@@ -80,9 +80,7 @@ export default function Dashboard() {
     }, 1400);
   };
 
-  // TxLINE Node Deploy state logic
-  const [deployStatus, setDeployStatus] = useState('idle'); // 'idle' | 'loading' | 'success'
-  const deployTimeoutRef = useRef(null);
+
 
   // Connect Wallet Morphing state logic
   const [walletConnectState, setWalletConnectState] = useState('idle'); // 'idle' | 'loading' | 'success'
@@ -92,20 +90,10 @@ export default function Dashboard() {
   const [buyOrderState, setBuyOrderState] = useState('idle'); // 'idle' | 'loading' | 'success'
   const buyOrderTimeoutRef = useRef(null);
 
-  const handleDeployClick = () => {
-    if (deployStatus === 'idle') {
-      setDeployStatus('loading');
-      deployTimeoutRef.current = setTimeout(() => {
-        setDeployStatus('success');
-      }, 1500);
-    } else if (deployStatus === 'success') {
-      setDeployStatus('idle');
-    }
-  };
+
 
   useEffect(() => {
     return () => {
-      if (deployTimeoutRef.current) clearTimeout(deployTimeoutRef.current);
       if (walletTimeoutRef.current) clearTimeout(walletTimeoutRef.current);
       if (buyOrderTimeoutRef.current) clearTimeout(buyOrderTimeoutRef.current);
     };
@@ -892,7 +880,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <button className="btn" style={{ padding: '8px 16px', fontSize: 12, background: 'var(--bg-inset)', border: '1px solid var(--border-subtle)', color: 'var(--ink-primary)' }}>
-                    Show Contract ▾
+                    Market Info ▾
                   </button>
                 </div>
 
@@ -1170,57 +1158,7 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                {/* TxLINE Node Status Morphing Card */}
-                <div className="stats-visual-card">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span className="mono" style={{ fontSize: 10, color: 'var(--ink-dim)' }}>TxLINE NODE STATUS</span>
-                    <span className="mono" style={{ 
-                      fontSize: 10, 
-                      fontWeight: 700, 
-                      color: deployStatus === 'idle' ? '#c084fc' : deployStatus === 'loading' ? '#fbbf24' : 'var(--signal-success)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em'
-                    }}>
-                      {deployStatus}
-                    </span>
-                  </div>
-                  
-                  <div style={{ fontSize: 12.5, color: 'var(--ink-secondary)', lineHeight: 1.45 }}>
-                    Deploy local predictive model agent node on Solana devnet to stream event loops.
-                  </div>
 
-                  <div className="morph-btn-container" style={{ marginTop: 4 }}>
-                    <button 
-                      type="button"
-                      className={`morph-btn ${deployStatus}`}
-                      onClick={handleDeployClick}
-                      disabled={deployStatus === 'loading'}
-                    >
-                      {deployStatus === 'idle' && (
-                        <span className="morph-btn-content">
-                          <svg viewBox="0 0 24 24" style={{ width: 14, height: 14, fill: 'currentColor' }}>
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                          </svg>
-                          Deploy Node
-                        </span>
-                      )}
-                      {deployStatus === 'loading' && (
-                        <span className="morph-btn-content">
-                          <span className="spinner-ring" />
-                          Deploying…
-                        </span>
-                      )}
-                      {deployStatus === 'success' && (
-                        <span className="morph-btn-content">
-                          <svg className="checkmark-svg">
-                            <path className="checkmark-path" d="M2 7l4 4 6-7" />
-                          </svg>
-                          Deployed
-                        </span>
-                      )}
-                    </button>
-                  </div>
-                </div>
 
                 {/* Current Volume Visual Card */}
                 <div className="stats-visual-card">

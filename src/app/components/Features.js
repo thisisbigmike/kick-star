@@ -70,7 +70,7 @@ export default function Features() {
           {/* Card 1: Live Commentary */}
           <div className="feature-card">
             <div className="card-stage">
-              <div className="card-tag">feed: txline-live-events</div>
+              <div className="card-tag">Live Feed</div>
               <div className="live-sass-panel">
                 <div className={`live-sass-text${sassAnimating ? ' bump' : ''}`}>{sassText}</div>
                 <div className="live-sass-actions">
@@ -87,7 +87,7 @@ export default function Features() {
           {/* Card 2: Predictions */}
           <div className="feature-card">
             <div className="card-stage">
-              <div className="card-tag">solana program: predict-earn</div>
+              <div className="card-tag">Predictions</div>
               <div className="prediction-box">
                 <div className="predict-title">Predict Barca vs Real Madrid Result</div>
                 {[['barca', 'Barca Wins', '64%'], ['draw', 'Draw', '12%'], ['madrid', 'Madrid Wins', '24%']].map(([choice, label, pct]) => (
@@ -106,7 +106,7 @@ export default function Features() {
           {/* Card 3: Leaderboard */}
           <div className="feature-card">
             <div className="card-stage">
-              <div className="card-tag">contract: score-leaderboard</div>
+              <div className="card-tag">Leaderboard</div>
               <div className="card-leaderboard">
                 {[['1.', '@SassMaster', '1,480 pts'], ['2.', '@El_Pundit', '1,210 pts'], ['3.', '@GoonerWitty', '980 pts']].map(([rank, user, score]) => (
                   <div className="leader-row" key={user}>
@@ -125,7 +125,7 @@ export default function Features() {
           {/* Card 4: Caricature */}
           <div className="feature-card">
             <div className="card-stage">
-              <div className="card-tag">engine: caricature-diffusion</div>
+              <div className="card-tag">Caricature Generator</div>
               <div className="caricature-stage" onClick={handleCaricature}>
                 <Image className={`caricature-img${caricatureActive ? ' active' : ''}`} src="/images/messi_kick.jpg" alt="Messi Caricature" width={125} height={125} style={{ animation: wobbling ? 'demo-jelly-wobble 0.8s var(--spring-bouncy)' : 'none', objectFit: 'cover' }} />
                 <span className="caricature-hint">Click to wobble</span>
@@ -140,7 +140,7 @@ export default function Features() {
           {/* Card 5: Platform Broadcast */}
           <div className="feature-card">
             <div className="card-stage">
-              <div className="card-tag">engine: platform-broadcast</div>
+              <div className="card-tag">Social Sync</div>
               <div className="platform-circles">
                 <div className={`platform-icon-wrap${activePlatforms.telegram ? ' active' : ''}`} title="Telegram" onClick={() => togglePlatform('telegram')}>
                   <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.27-2.03-.49-.82-.27-1.47-.41-1.41-.87.03-.24.36-.49.98-.74 3.82-1.66 6.37-2.75 7.64-3.28 3.64-1.53 4.4-1.8 4.89-1.8.11 0 .35.03.5.15.13.1.17.24.18.35-.01.07 0 .15-.02.24z" /></svg>
@@ -162,7 +162,7 @@ export default function Features() {
           {/* Card 6: Live Match Tracker */}
           <div className="feature-card">
             <div className="card-stage">
-              <div className="card-tag">feed: txline-match-state</div>
+              <div className="card-tag">Match Tracker</div>
               <div className="tracker-container">
                 <div className="match-field">
                   <div className="field-attack-zone">danger zone</div>

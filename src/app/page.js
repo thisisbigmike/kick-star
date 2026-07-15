@@ -3,7 +3,6 @@ export const dynamic = 'force-dynamic';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
-import CommandConsole from './components/CommandConsole';
 import Tuner from './components/Tuner';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
@@ -16,7 +15,6 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Features />
-        <CommandConsole />
         <Tuner />
         <FAQ />
         <Footer />

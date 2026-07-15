@@ -19,78 +19,6 @@ const comments = {
   ]
 };
 
-const payloads = [
-  // Messi Bicycle Kick
-  {
-    event: "goal",
-    match_id: "wc_2026_m48",
-    time_elapsed: "72:14",
-    scorer: {
-      name: "Lionel Messi",
-      team: "ARG",
-      method: "bicycle_kick"
-    },
-    market_state: {
-      odds_provider: "Consensus odds",
-      probability: {
-        ARG_win: 0.82,
-        draw: 0.12,
-        FRA_win: 0.06
-      },
-      odds_shift: {
-        ARG_win: "+22%",
-        FRA_win: "-20%"
-      }
-    }
-  },
-  // Maguire Own Goal
-  {
-    event: "own_goal",
-    match_id: "wc_2026_m12",
-    time_elapsed: "87:41",
-    scorer: {
-      name: "Harry Maguire",
-      team: "ENG",
-      against: "USA"
-    },
-    market_state: {
-      odds_provider: "Consensus odds",
-      probability: {
-        ENG_win: 0.31,
-        draw: 0.15,
-        USA_win: 0.54
-      },
-      odds_shift: {
-        ENG_win: "-38%",
-        USA_win: "+35%"
-      }
-    }
-  },
-  // VAR Review
-  {
-    event: "var_review",
-    match_id: "wc_2026_m64",
-    time_elapsed: "45+3:20",
-    detail: {
-      reason: "possible_penalty",
-      team_affected: "ESP",
-      status: "in_progress"
-    },
-    market_state: {
-      odds_provider: "Consensus odds",
-      probability: {
-        ESP_win: 0.45,
-        draw: 0.35,
-        GER_win: 0.20
-      },
-      odds_shift: {
-        ESP_win: "-2%",
-        draw: "+2%"
-      }
-    }
-  }
-];
-
 const subjects = ['Messi Bicycle Kick', 'Maguire Own Goal', 'VAR Review'];
 
 export default function Tuner() {
@@ -102,12 +30,6 @@ export default function Tuner() {
 
   const tone = sarc > 75 ? 'high' : sarc > 35 ? 'med' : 'low';
   const previewText = comments[tone][commentIdx];
-
-  // Deep clone payload to avoid mutations
-  const payload = JSON.parse(JSON.stringify(payloads[commentIdx]));
-  payload.market_state.stiffness = stiff;
-  payload.market_state.damping = damp;
-  payload.market_state.sarcasm = sarc;
 
   const cycleSubject = useCallback(() => {
     setCommentIdx(prev => (prev + 1) % subjects.length);
@@ -124,56 +46,47 @@ export default function Tuner() {
   return (
     <section className="section" id="tuner">
       <div className="wrap">
-        <div className="section-head">
-          <h2>TxLINE Payload &amp; Tone Tuner</h2>
-          <span className="tagline">Interact with raw TxLINE event structures. Adjust sass, stiffness, and watch the AI commentary render with spring physics.</span>
+        <div className="section-head" style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h2>Live Commentary Tuner</h2>
+          <span className="tagline">Customize the live commentary feed. Adjust the pundit mood, tension, and hype levels to tune the AI match narrator.</span>
         </div>
 
-        <div className="tuner-grid">
-          {/* Left: Tuner Controls */}
+        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <div className="tuner-card">
-            <div className="tuner-preview-label" style={{ marginBottom: 12 }}>
-              Active Live Event: <span onClick={cycleSubject} style={{ cursor: 'pointer', textDecoration: 'underline' }}>{subjects[commentIdx]}</span> (Click to cycle)
+            <div className="tuner-preview-label" style={{ marginBottom: 20, fontSize: 13, borderBottom: '1px solid var(--border-subtle)', paddingBottom: 12 }}>
+              Active Live Event: <span onClick={cycleSubject} style={{ cursor: 'pointer', textDecoration: 'underline', color: 'var(--accent-cyan)', fontWeight: 700 }}>{subjects[commentIdx]}</span> <span style={{ color: 'var(--ink-dim)' }}>(Click to cycle)</span>
             </div>
 
             <div className="tuner-row">
-              <label>stiffness</label>
-              <input type="range" min="80" max="500" value={stiff} onChange={handleSlider(setStiff)} />
-              <span>{stiff}</span>
-            </div>
-
-            <div className="tuner-row">
-              <label>damping</label>
-              <input type="range" min="5" max="50" value={damp} onChange={handleSlider(setDamp)} />
-              <span>{damp}</span>
-            </div>
-
-            <div className="tuner-row">
-              <label>sarcasm</label>
+              <label style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--ink-secondary)' }}>Pundit Mood</label>
               <input type="range" min="0" max="100" value={sarc} onChange={handleSlider(setSarc)} />
-              <span>{sarc}</span>
+              <span style={{ fontSize: 12, fontWeight: 700, textAlign: 'right', color: 'var(--accent-amber)' }}>
+                {sarc <= 35 ? 'Chill' : sarc <= 75 ? 'Sassy' : 'Unhinged'}
+              </span>
             </div>
 
-            <div className="tuner-preview-box">
+            <div className="tuner-row">
+              <label style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--ink-secondary)' }}>Tension</label>
+              <input type="range" min="5" max="50" value={damp} onChange={handleSlider(setDamp)} />
+              <span style={{ fontSize: 12, fontWeight: 700, textAlign: 'right', color: 'var(--accent-amber)' }}>
+                {damp <= 20 ? 'Relaxed' : damp <= 35 ? 'Moderate' : 'Intense'}
+              </span>
+            </div>
+
+            <div className="tuner-row">
+              <label style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--ink-secondary)' }}>Hype Level</label>
+              <input type="range" min="80" max="500" value={stiff} onChange={handleSlider(setStiff)} />
+              <span style={{ fontSize: 12, fontWeight: 700, textAlign: 'right', color: 'var(--accent-amber)' }}>
+                {stiff <= 200 ? 'Low' : stiff <= 380 ? 'High' : 'Max'}
+              </span>
+            </div>
+
+            <div className="tuner-preview-box" style={{ marginTop: 24 }}>
               <div className={`tuner-preview-text${bump ? ' bump' : ''}`}>{previewText}</div>
-              <div className="tuner-preview-label">
-                <span>tone: critically-damped sass</span>
-                <span>180ms integration</span>
+              <div className="tuner-preview-label" style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: 12, marginTop: 12, display: 'flex', justifyContent: 'space-between' }}>
+                <span>Pundit: {sarc <= 35 ? 'Chill' : sarc <= 75 ? 'Sassy' : 'Unhinged'}</span>
+                <span>Telemetry: Real-time Live Feed</span>
               </div>
-            </div>
-          </div>
-
-          {/* Right: Raw TxLINE JSON Payload */}
-          <div className="tuner-card" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <div className="tuner-preview-label" style={{ color: 'var(--accent-cyan)', display: 'flex', justifyContent: 'space-between', alignSid: 'center', alignItems: 'center' }}>
-              <span>⚡ Live TxLINE JSON Event</span>
-              <span className="mono" style={{ fontSize: 9, padding: '2px 6px', background: 'rgba(6, 182, 212, 0.1)', borderRadius: 4, border: '1px solid rgba(6, 182, 212, 0.2)' }}>txline-ws://</span>
-            </div>
-            <div className="tuner-preview-box" style={{ background: '#08070b', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-mono)', fontSize: 11, color: '#a9b2c3', lineHeight: 1.5, padding: 16, height: 260, overflowY: 'auto' }}>
-              <pre style={{ margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{JSON.stringify(payload, null, 2)}</pre>
-            </div>
-            <div className="tuner-preview-label" style={{ fontSize: 10, color: 'var(--ink-dim)' }}>
-              <span>Normalised schema matching all 104 matches</span>
             </div>
           </div>
         </div>

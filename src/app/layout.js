@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
                 from { opacity: 0; transform: translateY(40px) scale(0.95); }
                 to { opacity: 1; transform: translateY(0) scale(1); }
               }
-              .feature-card, .faq-item, .cta-band, .component-showcase, .tuner-card, .command-console-card {
+              .feature-card, .faq-item, .cta-band, .component-showcase, .tuner-card {
                 view-timeline: --reveal block;
                 animation: reveal-up auto linear forwards;
                 animation-timeline: --reveal;

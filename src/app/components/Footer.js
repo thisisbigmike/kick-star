@@ -4,17 +4,12 @@ export default function Footer() {
       title: 'Product',
       links: [
         { label: 'Features', href: '#features' },
-        { label: 'API Playground', href: '#commands' },
-        { label: 'Live Telemetry', href: '#demo' },
-        { label: 'Tuner', href: '#tuner' }
+        { label: 'Commentary Tuner', href: '#tuner' }
       ]
     },
     {
       title: 'Company',
       links: [
-        {/* label: 'About Us', href: '#faq' */},
-        { label: 'GitHub', href: 'https://github.com/kickstar-app', target: '_blank' },
-        { label: 'Solana Devs', href: 'https://solana.com/developers', target: '_blank' },
         { label: 'Support', href: 'mailto:support@kickstar.app' }
       ]
     },
@@ -22,7 +17,6 @@ export default function Footer() {
       title: 'Consensus',
       links: [
         { label: 'TxLINE Data', href: 'https://kinetics.colorion.co/', target: '_blank' },
-        { label: 'TxODDS Hackathon', href: 'https://superteam.fun/earn/listing/consumer-and-fan-experiences/', target: '_blank' },
         { label: 'Leaderboard', href: '#features' }
       ]
     },
@@ -109,10 +103,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Bottom Row */}
-          <div className="footer-bottom-row">
+          <div className="footer-bottom-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
             <div className="desc" style={{ color: 'var(--ink-dim)', fontSize: '13px' }}>
               AI-Powered live punditry built for TxODDS Hackathon.
+            </div>
+            <div style={{ fontSize: '12px' }}>
+              <a href="https://github.com/kickstar-app" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink-dim)', textDecoration: 'underline' }}>Open Source Code</a>
             </div>
           </div>
         </div>
