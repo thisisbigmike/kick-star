@@ -1,0 +1,16 @@
+{
+  "name": "Kinetics",
+  "short_name": "Kinetics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e0e10",
+  "theme_color": "#0e0e10",
+  "description": "Spring-physics motion for web interfaces",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

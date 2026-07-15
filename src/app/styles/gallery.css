@@ -1,0 +1,665 @@
+/* ============================================================
+   MatchSass — gallery.css (Interactive Cards & Design Showcase)
+   ============================================================ */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Feature Card Glassmorphic Shell */
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: 
+    border-color 0.4s var(--spring-snappy), 
+    transform 0.4s var(--spring-wobble), 
+    box-shadow 0.4s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 
+    0 30px -20px rgba(0, 0, 0, 0.85),
+    0 0 40px -15px var(--accent-violet-glow);
+}
+
+/* ---- API Command Console Layouts & Responsive Styles ---- */
+.command-console-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+}
+
+.console-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.console-left-col .btn {
+  justify-content: flex-start;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 16px 20px;
+}
+
+.console-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--bg-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  min-height: 280px;
+  justify-content: center;
+  position: relative;
+}
+
+@media (max-width: 860px) {
+  .command-console-card {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .component-showcase {
+    padding: 24px 20px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 440px) {
+  .console-caricature-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left;
+    gap: 16px !important;
+  }
+}
+
+/* Interactive Card Stage */
+.card-stage {
+  position: relative;
+  height: 220px;
+  background: radial-gradient(
+    130% 100% at 50% 0%,
+    rgba(17, 14, 32, 0.5),
+    rgba(10, 8, 19, 0.2)
+  );
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.card-tag {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--ink-secondary);
+  background: rgba(4, 3, 8, 0.6);
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.card-foot {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: rgba(10, 8, 19, 0.2);
+}
+
+.card-foot .name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+  color: var(--ink-primary);
+  text-transform: uppercase;
+}
+
+.card-foot .desc {
+  margin-top: 8px;
+  font-size: 13.5px;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+}
+
+/* ---- Card 1: Live Commentary Simulator ---- */
+.live-sass-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.live-sass-text {
+  padding: 12px 14px;
+  background: var(--bg-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--accent-cyan);
+  line-height: 1.5;
+  height: 72px;
+  overflow: hidden;
+  transition: transform 0.4s var(--spring-bouncy), border-color 0.3s ease;
+}
+
+.live-sass-text.bump {
+  transform: scale(1.03) translateY(-2px);
+  border-color: var(--accent-cyan);
+}
+
+.live-sass-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.live-sass-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 11px;
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-line);
+  text-align: center;
+  color: var(--ink-primary);
+  transition: all 0.3s var(--spring-bouncy);
+}
+
+.live-sass-btn:hover {
+  background: var(--accent-cyan);
+  color: #031418;
+  border-color: var(--accent-cyan);
+  transform: scale(1.03);
+}
+
+/* ---- Card 2: Prediction Poll ---- */
+.prediction-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.predict-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-secondary);
+  text-align: center;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.predict-option {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 100px;
+  background: var(--bg-inset);
+  border: 1px solid var(--border-subtle);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--ink-primary);
+  transition: all 0.4s var(--spring-bouncy);
+}
+
+.predict-option:hover {
+  border-color: var(--accent-amber);
+  transform: scale(1.02);
+  background: rgba(249, 115, 22, 0.05);
+}
+
+.predict-option.selected {
+  background: var(--accent-amber);
+  color: #0c0500;
+  border-color: var(--accent-amber);
+  transform: scale(1.04);
+  box-shadow: 0 6px 15px var(--accent-amber-glow);
+}
+
+.predict-option.correct {
+  background: var(--signal-success);
+  color: #02180e;
+  border-color: var(--signal-success);
+}
+
+.predict-option .pct {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+/* ---- Card 3: Leaderboard ---- */
+.card-leaderboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.leader-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--bg-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  transition: transform 0.3s var(--spring-bouncy), border-color 0.2s;
+}
+
+.leader-row:hover {
+  transform: translateX(6px);
+  border-color: var(--accent-violet);
+  background: rgba(139, 92, 246, 0.04);
+}
+
+.leader-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.leader-rank {
+  font-family: var(--font-mono);
+  color: var(--accent-violet);
+  font-weight: 800;
+}
+
+.leader-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent-amber);
+}
+
+/* ---- Card 4: Caricature Slide ---- */
+.caricature-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caricature-img {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-line);
+  transition: transform 0.5s var(--spring-bouncy), border-color 0.3s;
+}
+
+.caricature-img.active {
+  transform: scale(1.12) rotate(4deg);
+  border-color: var(--accent-violet);
+  box-shadow: 0 12px 24px var(--accent-violet-glow);
+}
+
+.caricature-hint {
+  position: absolute;
+  bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--ink-dim);
+}
+
+/* ---- Card 5: Platform sync dials ---- */
+.platform-circles {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.platform-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-inset);
+  border: 1px solid var(--border-line);
+  display: grid;
+  place-items: center;
+  color: var(--ink-secondary);
+  transition: all 0.3s var(--spring-bouncy);
+  position: relative;
+}
+
+.platform-icon-wrap:hover {
+  transform: scale(1.2);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 20px var(--accent-cyan-glow);
+}
+
+.platform-icon-wrap.active {
+  color: #031418;
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  animation: pulse-ring-cyan 2s ease-out infinite;
+}
+
+@keyframes pulse-ring-cyan {
+  0% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(6, 182, 212, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(6, 182, 212, 0); }
+}
+
+.platform-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* ---- Card 6: Live Match Field Tracker & Broadcaster Guide ---- */
+.tracker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.match-field {
+  position: relative;
+  width: 200px;
+  height: 110px;
+  border-radius: var(--radius-md);
+  background: #112d1b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Soccer field markings */
+.match-field::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.match-field::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+.field-ball {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--ink-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  animation: move-ball 5s var(--spring-bouncy) infinite;
+}
+
+@keyframes move-ball {
+  0%, 100% { left: 20%; top: 50%; }
+  33% { left: 80%; top: 20%; }
+  66% { left: 55%; top: 80%; }
+}
+
+.field-attack-zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  background: rgba(239, 68, 68, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--signal-error);
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: pulse-danger 1.5s ease infinite;
+}
+
+@keyframes pulse-danger {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.broadcaster-badge {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+
+/* ============================================================
+   Design System UI Component Showcase Section
+   ============================================================ */
+
+.component-showcase {
+  background: rgba(14, 11, 26, 0.4);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  margin-top: 60px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.showcase-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.showcase-box {
+  background: var(--bg-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Switches & Toggles (Inspired by HeadlessUI) */
+.switch-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.switch-track {
+  width: 48px;
+  height: 24px;
+  border-radius: 100px;
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-line);
+  position: relative;
+  transition: background-color 0.3s var(--spring-snappy);
+}
+
+.switch-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ink-primary);
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.3s var(--spring-bouncy);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.switch-control.active .switch-track {
+  background: var(--accent-violet);
+  border-color: var(--accent-violet);
+}
+
+.switch-control.active .switch-thumb {
+  transform: translateX(22px);
+}
+
+/* Glass Tabs (Inspired by Surf Design System) */
+.glass-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-line);
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.glass-tab-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  transition: all 0.2s ease;
+}
+
+.glass-tab-btn.active {
+  background: transparent;
+  color: var(--ink-primary);
+  box-shadow: none;
+}
+
+/* Glowing Border Card (Inspired by DesignSystemsRepo) */
+.glowing-card {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px dashed var(--border-line);
+  position: relative;
+}
+
+.glowing-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
+  z-index: -1;
+  opacity: 0.15;
+  transition: opacity 0.3s ease;
+}
+
+.glowing-card:hover::before {
+  opacity: 0.35;
+}
+
+/* Input Fields (Inspired by Component.gallery) */
+.premium-input {
+  width: 100%;
+  height: 40px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius-sm);
+  padding-inline: 12px;
+  font-size: 13px;
+  color: var(--ink-primary);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.premium-input:focus {
+  border-color: var(--accent-violet);
+  box-shadow: 0 0 10px var(--accent-violet-glow);
+}

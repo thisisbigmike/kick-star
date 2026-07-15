@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
+
+/* ============================================================
+   MatchSass — base.css (Ultra Premium Design System)
+   Inspired by HeadlessUI, Design Systems Surf & Kinetics
+   ============================================================ */
+
+:root {
+  /* Kickstar Obsidian Surfaces */
+  --bg-obsidian: #15111F;
+  --bg-surface: #1F1A2E;
+  --bg-surface-raised: #2A243C;
+  --bg-card: rgba(49, 43, 71, 0.6); /* Based on Card #312B47 */
+  --bg-inset: #1A1528; /* Navigation Background */
+  
+  /* Borders & Dividers */
+  --border-subtle: #40365C; /* Divider */
+  --border-line: #342C49; /* Default Border */
+  --border-glow: #9945FF; /* Focus Border / Primary Purple */
+  --border-selected: #14F195; /* Selected Border / Solana Green */
+  
+  /* Text & Ink */
+  --ink-primary: #F8F7FC; /* Primary text */
+  --ink-secondary: #B5AFC8; /* Secondary text */
+  --ink-dim: #6E6782; /* Disabled text / Unselected */
+  --ink-faint: #40365C; /* Divider */
+  
+  /* Kickstar Identity & Accents */
+  --accent-violet: #9945FF; /* Primary Purple */
+  --accent-violet-glow: rgba(153, 69, 255, 0.35);
+  --accent-cyan: #14F195; /* Solana Green */
+  --accent-cyan-glow: rgba(20, 241, 149, 0.35);
+  --accent-gradient: linear-gradient(135deg, #9945FF, #14F195);
+  --accent-gradient-cyan: linear-gradient(135deg, #14F195, #9945FF);
+  --accent-amber: #FFB627; /* Gold CTA / XP Gold / Achievement Gold */
+  --accent-amber-glow: rgba(255, 182, 39, 0.35);
+  
+  /* Signals & Semantics */
+  --signal-success: #22C55E; /* Live / Goal / Success / Win */
+  --signal-success-glow: rgba(34, 197, 94, 0.2);
+  --signal-error: #EF4444; /* Cancelled / Red Card / Loss / Error */
+  --signal-warning: #FACC15; /* Yellow Card / Warning */
+  --signal-info: #3B82F6; /* Upcoming / Info */
+
+  /* Typography */
+  --font-display: "Nunito", "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --font-body: "Nunito", "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-score: "Baloo 2", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  /* Spring Mechanics */
+  --spring-wobble: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --spring-bouncy: cubic-bezier(0.34, 1.65, 0.45, 1);
+  --spring-snappy: cubic-bezier(0.25, 1, 0.5, 1);
+  
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --wrap-max: 1200px;
+}
+
+/* ---- Brand Design System Presets ---- */
+html.brand-kickstar {
+  --bg-obsidian: #15111F;
+  --bg-surface: #1F1A2E;
+  --bg-surface-raised: #2A243C;
+  --bg-card: rgba(49, 43, 71, 0.6);
+  --bg-inset: #1A1528;
+  --border-subtle: #40365C;
+  --border-line: #342C49;
+  --border-glow: #9945FF;
+  --border-selected: #14F195;
+  --accent-violet: #9945FF;
+  --accent-violet-glow: rgba(153, 69, 255, 0.35);
+  --accent-cyan: #14F195;
+  --accent-cyan-glow: rgba(20, 241, 149, 0.35);
+  --accent-gradient: linear-gradient(135deg, #9945FF, #14F195);
+  --accent-gradient-cyan: linear-gradient(135deg, #14F195, #9945FF);
+  --accent-amber: #FFB627;
+  --accent-amber-glow: rgba(255, 182, 39, 0.35);
+  --ink-primary: #F8F7FC;
+  --ink-secondary: #B5AFC8;
+  --ink-dim: #6E6782;
+  --ink-faint: #40365C;
+  --signal-success: #22C55E;
+  --signal-success-glow: rgba(34, 197, 94, 0.2);
+  --signal-error: #EF4444;
+  --signal-warning: #FACC15;
+  --signal-info: #3B82F6;
+  --radius-lg: 16px;
+  --font-display: "Nunito", "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --font-body: "Nunito", "Nunito Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-score: "Baloo 2", system-ui, -apple-system, sans-serif;
+}
+
+html.brand-linear {
+  --bg-obsidian: #0B0A10;
+  --bg-surface: #13111C;
+  --bg-surface-raised: #1C192B;
+  --bg-card: rgba(19, 17, 28, 0.6);
+  --bg-inset: rgba(11, 10, 16, 0.8);
+  --border-subtle: rgba(139, 92, 246, 0.1);
+  --border-line: rgba(139, 92, 246, 0.15);
+  --border-glow: rgba(139, 92, 246, 0.3);
+  --accent-violet: #8b5cf6;
+  --accent-violet-glow: rgba(139, 92, 246, 0.35);
+  --accent-cyan: #A78BFA;
+  --accent-cyan-glow: rgba(167, 139, 250, 0.35);
+  --accent-gradient: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
+  --accent-gradient-cyan: linear-gradient(135deg, var(--accent-cyan), #7c3aed);
+  --accent-amber: #f59e0b;
+  --accent-amber-glow: rgba(245, 158, 11, 0.35);
+  --ink-primary: #e2e8f0;
+  --ink-secondary: #94a3b8;
+  --ink-dim: #64748b;
+  --ink-faint: #334155;
+  --signal-success: #10b981;
+  --signal-success-glow: rgba(16, 185, 129, 0.2);
+  --signal-error: #ef4444;
+  --radius-lg: 20px;
+}
+
+html.brand-attio {
+  --bg-obsidian: #0b0f19;
+  --bg-surface: #101622;
+  --bg-surface-raised: #182235;
+  --bg-card: rgba(24, 34, 53, 0.65);
+  --bg-inset: rgba(11, 15, 25, 0.9);
+  --border-line: rgba(255, 255, 255, 0.05);
+  --border-glow: rgba(99, 102, 241, 0.3);
+  --accent-violet: #6366f1; /* Indigo */
+  --accent-violet-glow: rgba(99, 102, 241, 0.25);
+  --accent-cyan: #38bdf8; /* Sky */
+  --accent-cyan-glow: rgba(56, 189, 248, 0.25);
+  --accent-gradient: linear-gradient(135deg, #6366f1, #38bdf8);
+  --accent-amber: #10b981; /* Attio Emerald Green */
+  --ink-primary: #f9fafb;
+  --ink-secondary: #9ca3af;
+  --radius-lg: 12px;
+}
+
+html.brand-vercel {
+  --bg-obsidian: #000000;
+  --bg-surface: #0a0a0a;
+  --bg-surface-raised: #161616;
+  --bg-card: rgba(22, 22, 22, 0.85);
+  --bg-inset: rgba(5, 5, 5, 0.95);
+  --border-line: rgba(255, 255, 255, 0.12);
+  --border-glow: #ffffff;
+  --accent-violet: #ffffff;
+  --accent-violet-glow: rgba(255, 255, 255, 0.3);
+  --accent-cyan: #eaeaea;
+  --accent-cyan-glow: rgba(234, 234, 234, 0.3);
+  --accent-gradient: linear-gradient(135deg, #ffffff, #888888);
+  --accent-amber: #ef4444; /* Vercel Alert Red */
+  --ink-primary: #ffffff;
+  --ink-secondary: #888888;
+  --radius-lg: 6px;
+}
+
+html.brand-stripe {
+  --bg-obsidian: #0a2540;
+  --bg-surface: #0f355c;
+  --bg-surface-raised: #144374;
+  --bg-card: rgba(20, 67, 116, 0.65);
+  --bg-inset: rgba(6, 20, 35, 0.9);
+  --border-line: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(0, 212, 255, 0.3);
+  --accent-violet: #635bff; /* Stripe Indigo */
+  --accent-violet-glow: rgba(99, 91, 255, 0.3);
+  --accent-cyan: #00d4ff; /* Stripe Cyan */
+  --accent-cyan-glow: rgba(0, 212, 255, 0.3);
+  --accent-gradient: linear-gradient(135deg, #635bff, #00d4ff);
+  --accent-amber: #ff5e00;
+  --ink-primary: #f8fafc;
+  --ink-secondary: #adbdcc;
+  --radius-lg: 32px;
+}
+
+html.brand-mono {
+  --bg-obsidian: #000000;
+  --bg-surface: #000000;
+  --bg-surface-raised: #121212;
+  --bg-card: rgba(0, 0, 0, 0.95);
+  --bg-inset: #000000;
+  --border-subtle: rgba(255, 255, 255, 0.15);
+  --border-line: rgba(255, 255, 255, 0.25);
+  --border-glow: #ffffff;
+  --accent-violet: #ffffff;
+  --accent-violet-glow: rgba(255, 255, 255, 0.3);
+  --accent-cyan: #ffffff;
+  --accent-cyan-glow: rgba(255, 255, 255, 0.3);
+  --accent-gradient: linear-gradient(135deg, #ffffff, #666666);
+  --accent-gradient-cyan: linear-gradient(135deg, #ffffff, #222222);
+  --accent-amber: #ffffff;
+  --accent-amber-glow: rgba(255, 255, 255, 0.3);
+  --signal-success: #ffffff;
+  --signal-success-glow: rgba(255, 255, 255, 0.2);
+  --signal-error: #777777;
+  --ink-primary: #ffffff;
+  --ink-secondary: #888888;
+  --ink-dim: #666666;
+  --ink-faint: #333333;
+  --radius-lg: 0px;
+  --radius-md: 0px;
+  --radius-sm: 0px;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-obsidian);
+}
+
+body {
+  background: var(--bg-obsidian);
+  color: var(--ink-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  /* Subtle background pattern to mimic the web3 mesh look */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+}
+
+/* Mesh & Dot Background overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(var(--border-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 40%,
+    rgba(4, 3, 8, 0.6) 80%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Global Link Resets */
+a, a:hover, a:active, a:focus, a:visited {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-surface-raised);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-violet);
+}
+
+/* Layout Wrappers */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap-max);
+  margin-inline: auto;
+  padding-inline: 28px;
+}
+
+.section {
+  padding-block: clamp(60px, 8vw, 120px);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-head::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-violet), var(--accent-cyan));
+}
+
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--ink-primary) 30%, var(--ink-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-head .tagline {
+  font-size: clamp(14px, 1.6vw, 17px);
+  color: var(--ink-secondary);
+  max-width: 650px;
+}
+
+/* Typography elements */
+.mono {
+  font-family: var(--font-mono);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-violet);
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.h-display {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6.5vw, 76px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Scroll Fallback transition rules */
+.in-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Spring Wobble Animation for Interactive Elements */
+@keyframes demo-jelly-wobble {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.15, 0.85) rotate(-3deg); }
+  50% { transform: scale(0.85, 1.15) rotate(3deg); }
+  75% { transform: scale(1.05, 0.95) rotate(-1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Nunito Font Utility Class */
+.nunito {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
