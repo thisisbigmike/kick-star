@@ -14,9 +14,9 @@ export default function Footer() {
       ]
     },
     {
-      title: 'Consensus',
+      title: 'Fan Identity',
       links: [
-        { label: 'TxLINE Data', href: 'https://kinetics.colorion.co/', target: '_blank' },
+        { label: 'Fan Pass', href: '#features' },
         { label: 'Leaderboard', href: '#features' }
       ]
     },
@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="wrap">
           <div className="cta-band">
             <h2>Bring your football matches to life.</h2>
-            <p>Launch the Kickstar Hub. Leverage live TxLINE data to predict match events and claim rewards on Solana.</p>
+            <p>Tap your team, mint your Fan Pass, and predict match moments — no reading required, no odds shown.</p>
             <a href="/dashboard" className="btn btn-cyan">Launch Web Hub Portal</a>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Footer() {
                 </div>
               </div>
               <p className="desc">
-                Kickstar is the complete AI-powered punditry and consensus fan experience platform for football, powered by TxLINE &amp; Solana.
+                Kickstar is a zero-reading football companion built for sight, sound, and touch — a Solana Fan Pass, tap-to-predict, and a Pidgin voice Why Engine.
               </p>
               <p className="copyright">
                 Kickstar App © 2026
@@ -105,7 +105,7 @@ export default function Footer() {
 
           <div className="footer-bottom-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
             <div className="desc" style={{ color: 'var(--ink-dim)', fontSize: '13px' }}>
-              AI-Powered live punditry built for TxODDS Hackathon.
+              Built for the TxODDS World Cup Hackathon — Consumer &amp; Fan Experiences track.
             </div>
             <div style={{ fontSize: '12px' }}>
               <a href="https://github.com/kickstar-app" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--ink-dim)', textDecoration: 'underline' }}>Open Source Code</a>

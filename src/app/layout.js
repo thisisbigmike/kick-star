@@ -1,4 +1,5 @@
 import ThemeController from './components/ThemeController';
+import WalletProviders from './components/WalletProviders';
 import './styles/base.css';
 import './styles/header.css';
 import './styles/hero.css';
@@ -11,12 +12,12 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('http://localhost:3000'),
-  title: 'Kickstar — Real-time Football Analytics & Companion App',
-  description: 'Kickstar is a high-performance Web3 football companion and predictive reward portal. We parse real-time match telemetry and consensus odds shifts from the TxLINE data layer into dynamic prediction pools. Solana integrated.',
+  title: 'Kickstar — The Football Companion You Never Have to Read',
+  description: 'Kickstar is a zero-reading football companion for World Cup fans. Tap your team to onboard, mint your Fan Pass on Solana, predict match moments with a tap, and hear the "Why" behind every goal and card in Pidgin voice — no typing, no stat tables, no odds, ever.',
   openGraph: {
     type: 'website',
-    title: 'Kickstar — Real-time Football Analytics & Companion App',
-    description: 'Kickstar is a high-performance Web3 football companion and predictive reward portal. We parse real-time match telemetry and consensus odds shifts from the TxLINE data layer into dynamic prediction pools. Solana integrated.',
+    title: 'Kickstar — The Football Companion You Never Have to Read',
+    description: 'A zero-reading football companion: tap-to-onboard, a Solana Fan Pass, tap-to-predict, and a Pidgin voice "Why Engine" that explains every match moment out loud.',
     images: ['/og-image.png'],
   },
   icons: {
@@ -48,8 +49,10 @@ export default function RootLayout({ children }) {
         `}</style>
       </head>
       <body>
-        {children}
-        <ThemeController />
+        <WalletProviders>
+          {children}
+          <ThemeController />
+        </WalletProviders>
       </body>
     </html>
   );

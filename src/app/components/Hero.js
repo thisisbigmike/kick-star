@@ -8,10 +8,10 @@ export default function Hero() {
   const timeoutRef = useRef(null);
 
   const messages = [
-    { type: 'bot', html: '🔌 <b>Kickstar Live Hub:</b> Successfully subscribed to the TxLINE event websocket feed. Parsing match telemetry...' },
-    { type: 'bot-card', img: '/images/messi_kick.jpg', title: '⚽ GOAL OF THE DECADE', text: "Messi scores a bicycle kick! ARG win prob surged to 82% on TxLINE consensus. The defender is still searching for his dignity." },
-    { type: 'bot', html: '📈 <b>Consensus Odds Shift:</b> Real Madrid win probability dropped by 18% after that own goal. My neural network says Maguire own goal incoming. Predict on-chain now!' },
-    { type: 'bot', html: '🗳️ <b>Active Fan Vote:</b> Predict on-chain in the live prediction pools now to claim SSU loyalty points!' }
+    { type: 'bot', html: '🔌 <b>Kickstar Why Engine:</b> Listening to the live match feed. Tap "Why" on any moment for a spoken Pidgin explanation.' },
+    { type: 'bot-card', img: '/images/messi_kick.jpg', title: '⚽ GOAL OF THE DECADE', text: "Messi scores a bicycle kick! Tap the goal to hear why it happened — in Pidgin voice, no reading needed." },
+    { type: 'bot', html: '🟥 <b>Red Card!</b> Tap the card icon to hear the Why Engine explain the call out loud.' },
+    { type: 'bot', html: '🏆 <b>Fan Pass:</b> Tap your team badge to mint your Fan Pass on Solana — zero typing, zero forms.' }
   ];
 
   useEffect(() => {
@@ -68,13 +68,13 @@ export default function Hero() {
       <div className="wrap" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, zIndex: 10 }}>
         {/* Headline */}
         <h1 style={{ lineHeight: 1.1, textAlign: 'center', margin: 0 }}>
-          <span style={{ fontFamily: 'var(--font-serif)', fontWeight: 700, fontStyle: 'italic', textTransform: 'none', color: '#fff', fontSize: 'min(9vw, 76px)', letterSpacing: '0.01em', display: 'block' }}>Fan Influence,</span>
-          <span style={{ fontFamily: 'var(--font-body)', fontWeight: 900, textTransform: 'uppercase', color: '#fff', fontSize: 'min(7.5vw, 60px)', letterSpacing: '-0.02em', display: 'block', marginTop: '4px' }}>Powered By TxLINE.</span>
+          <span style={{ fontFamily: 'var(--font-serif)', fontWeight: 700, fontStyle: 'italic', textTransform: 'none', color: '#fff', fontSize: 'min(9vw, 76px)', letterSpacing: '0.01em', display: 'block' }}>Football, No Reading</span>
+          <span style={{ fontFamily: 'var(--font-body)', fontWeight: 900, textTransform: 'uppercase', color: '#fff', fontSize: 'min(7.5vw, 60px)', letterSpacing: '-0.02em', display: 'block', marginTop: '4px' }}>Required.</span>
         </h1>
 
         {/* Subtext */}
         <p style={{ maxWidth: '640px', margin: '24px auto 36px auto', fontSize: '15.5px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, fontWeight: 500 }}>
-          Kickstar is a high-performance Web3 football companion &amp; predictive reward portal. We parse real-time match telemetry and consensus odds shifts from the high-performance <b>TxLINE data layer</b> into dynamic prediction pools, live scoring analytics, and custom caricatures.
+          Kickstar is a football companion built for sight, sound, and touch — not text. Tap your team to onboard, mint your Fan Pass on Solana, predict match moments with a tap, and hear the <b>Why Engine</b> explain every goal and card out loud in Pidgin. No forms, no stat tables, no odds — ever.
         </p>
 
         {/* CTA */}
@@ -86,8 +86,8 @@ export default function Hero() {
 
       {/* Bottom Corner Metadata */}
       <div className="hero-meta-left">
-        <span className="hero-meta-label">Consensus Engine</span>
-        <span className="hero-meta-val">TxLINE Data Integration / Live Telemetry</span>
+        <span className="hero-meta-label">Why Engine</span>
+        <span className="hero-meta-val">Live Match Events / Pidgin Voice</span>
       </div>
 
       <div className="hero-meta-right">
@@ -98,7 +98,7 @@ export default function Hero() {
         </div>
         <div className="hero-meta-right-text">
           <span className="hero-meta-val">10k+ Fans</span>
-          <span className="hero-meta-label">Staking &amp; Predicting</span>
+          <span className="hero-meta-label">Tapping &amp; Predicting</span>
         </div>
       </div>
 

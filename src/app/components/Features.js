@@ -62,8 +62,8 @@ export default function Features() {
     <section className="section" id="features">
       <div className="wrap">
         <div className="section-head">
-          <h2>Fan Influence &amp; Staking Mechanics</h2>
-          <span className="tagline">Leveraging the high-performance TxLINE data layer to fuel on-chain fan voting, predictive games, and exclusive rewards.</span>
+          <h2>Everything Is a Tap</h2>
+          <span className="tagline">Zero-reading fan identity, tap-to-predict, and a Pidgin voice Why Engine — no typing, no odds, ever.</span>
         </div>
 
         <div className="features-grid">
@@ -79,8 +79,8 @@ export default function Features() {
               </div>
             </div>
             <div className="card-foot">
-              <div className="name">TxLINE Fan Voting Pools</div>
-              <div className="desc">Stake $SASS Fan Tokens to vote in binding, real-time polls matching live match events (e.g. caricature style or referee call ratings).</div>
+              <div className="name">Live Match Commentary</div>
+              <div className="desc">Tap the Why Engine button on any match moment to hear a spoken Pidgin explanation — no reading required.</div>
             </div>
           </div>
 
@@ -90,16 +90,16 @@ export default function Features() {
               <div className="card-tag">Predictions</div>
               <div className="prediction-box">
                 <div className="predict-title">Predict Barca vs Real Madrid Result</div>
-                {[['barca', 'Barca Wins', '64%'], ['draw', 'Draw', '12%'], ['madrid', 'Madrid Wins', '24%']].map(([choice, label, pct]) => (
+                {[['barca', 'Barca Wins'], ['draw', 'Draw'], ['madrid', 'Madrid Wins']].map(([choice, label]) => (
                   <button key={choice} className={predictionClass(choice)} onClick={() => handlePredict(choice)}>
-                    {label} {showPcts && <span className="pct">{pct}</span>}
+                    {label} {showPcts && correctChoice === choice && <span className="pct">✓</span>}
                   </button>
                 ))}
               </div>
             </div>
             <div className="card-foot">
-              <div className="name">Predict-to-Earn (P2E)</div>
-              <div className="desc">Predict match outcomes powered by real-time TxLINE consensus odds to earn reward points. Staking more $SASS boosts your voting weight.</div>
+              <div className="name">Tap-to-Predict</div>
+              <div className="desc">Predict match moments with a tap and earn XP for participating — no typed scorelines, no odds shown, ever.</div>
             </div>
           </div>
 
@@ -108,7 +108,7 @@ export default function Features() {
             <div className="card-stage">
               <div className="card-tag">Leaderboard</div>
               <div className="card-leaderboard">
-                {[['1.', '@SassMaster', '1,480 pts'], ['2.', '@El_Pundit', '1,210 pts'], ['3.', '@GoonerWitty', '980 pts']].map(([rank, user, score]) => (
+                {[['1.', '@SassMaster', '1,480 XP'], ['2.', '@El_Pundit', '1,210 XP'], ['3.', '@GoonerWitty', '980 XP']].map(([rank, user, score]) => (
                   <div className="leader-row" key={user}>
                     <div className="leader-user"><span className="leader-rank">{rank}</span> {user}</div>
                     <div className="leader-score">{score}</div>
@@ -117,8 +117,8 @@ export default function Features() {
               </div>
             </div>
             <div className="card-foot">
-              <div className="name">SSU Fan Loyalty Leaderboard</div>
-              <div className="desc">A web3-native leaderboard pulling scores on-chain, encouraging competition to unlock VIP match experiences and signed kits.</div>
+              <div className="name">Fan Loyalty Leaderboard</div>
+              <div className="desc">Rankings driven entirely by participation and streaks — never by staked tokens — to unlock VIP match experiences and signed kits.</div>
             </div>
           </div>
 
@@ -133,7 +133,7 @@ export default function Features() {
             </div>
             <div className="card-foot">
               <div className="name">Collectible AI Memorabilia</div>
-              <div className="desc">Redeem loyalty points to generate and claim custom AI caricature cards of key match highlights as digital collectibles.</div>
+              <div className="desc">Redeem XP to generate and claim custom AI caricature cards of key match highlights as digital collectibles.</div>
             </div>
           </div>
 
@@ -155,7 +155,7 @@ export default function Features() {
             </div>
             <div className="card-foot">
               <div className="name">Social Broadcast Syndication</div>
-              <div className="desc">Instantly sync your club&apos;s poll results, caricature cards, and prediction scores across Telegram, Discord, and X (Twitter) in real time.</div>
+              <div className="desc">Instantly sync your club&apos;s caricature cards and prediction XP across Telegram, Discord, and X (Twitter) in real time.</div>
             </div>
           </div>
 
@@ -173,7 +173,7 @@ export default function Features() {
             </div>
             <div className="card-foot">
               <div className="name">Live Hub &amp; Check-ins</div>
-              <div className="desc">Track live match telemetry from TxLINE, get stream listings, and participate in in-play check-ins to earn SSU loyalty points.</div>
+              <div className="desc">Track icon-based momentum and alerts for live matches, get stream listings, and check in during play to earn XP.</div>
             </div>
           </div>
         </div>

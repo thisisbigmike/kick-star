@@ -1,24 +1,24 @@
 export default function FAQ() {
   const faqs = [
     {
-      q: "What are $SASS Fan Tokens and how do they work?",
-      a: "$SASS is the native utility token of the Kickstar platform deployed on Solana. Holding $SASS acts as your membership license, granting you access to official club channels, voting rights in team polls, and a multiplier on all prediction rewards."
+      q: "Do I need to type anything to use Kickstar?",
+      a: "No. Onboarding is tap-only — tap your club badge to set up your profile, tap to connect your wallet, and tap to predict match moments. There are no forms anywhere in the core experience."
     },
     {
-      q: "How do fans influence clubs and match experiences?",
-      a: "Clubs issue binding and non-binding polls on Kickstar. By staking your $SASS tokens, you cast votes on various team decisions, such as deciding the next caricature match graphic style, selecting stadium entry playlists, or rating controversial VAR decisions."
+      q: "What is a Fan Pass?",
+      a: "Your Fan Pass is a compressed NFT minted on Solana at onboarding. It's a visual badge and trophy display — not a stat table — that evolves as you earn achievements, and it's yours permanently, on-chain."
     },
     {
-      q: "How does the TxLINE data layer power the Predict-to-Earn engine?",
-      a: "Kickstar connects to TxLINE's real-time events and consensus betting odds feed. We generate dynamic prediction pools (e.g. 'Will Barca score in the next 5 mins?'). Correct predictions are verified by live TxLINE match results, rewarding you with SSU Loyalty Points."
+      q: "Is Kickstar a betting app?",
+      a: "No. Kickstar never shows odds, never lets you wager money, and has no withdrawal mechanic. Predictions earn XP and bragging-rights badges only — it's an identity and collectible progression system, not gambling."
     },
     {
-      q: "What exclusive rewards can fans redeem SSU points for?",
-      a: "SSU Loyalty Points earned from predictions, quizzes, and voting can be redeemed in our Rewards Center. Rewards range from digital collectibles (AI match caricatures) to signed shirts, VIP stadium box tickets, and meet-and-greets with top players."
+      q: "What is the Why Engine?",
+      a: "The Why Engine turns live match events (goals, cards, corners, VAR reviews) into a spoken Pidgin explanation. Tap the Why button on any match moment to hear what happened, out loud, no reading required."
     },
     {
-      q: "Is there a maximum cap on voting rights?",
-      a: "Yes. To ensure fair consensus and prevent single whales from dominating the polls, each club sets a maximum voting cap per user, regardless of how many $SASS Fan Tokens they hold. This guarantees a decentralized, fan-first voting system."
+      q: "What happens to my predictions?",
+      a: "Each locked prediction is recorded as a receipt on Solana devnet. XP is awarded for participating, not just for being right, so your progress keeps building match after match."
     }
   ];
 
@@ -26,10 +26,10 @@ export default function FAQ() {
     <section className="section" id="faq">
       <div className="wrap">
         <div className="section-head">
-          <h2>Fan Hub &amp; Voting Architecture</h2>
-          <span className="tagline">How Kickstar uses Solana and TxLINE data layers to provide Web3 rewards and voting privileges to sports fans.</span>
+          <h2>Frequently Asked Questions</h2>
+          <span className="tagline">How Kickstar&apos;s zero-reading, Solana-based fan identity system actually works.</span>
         </div>
-        
+
         <div className="faq-grid">
           {faqs.map((faq, i) => (
             <div className="faq-item" key={i}>

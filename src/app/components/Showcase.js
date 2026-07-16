@@ -92,7 +92,7 @@ export default function Showcase() {
               <span className="showcase-label">Gradient Mesh Cards</span>
               <div className="showcase-box" style={{ padding: 12 }}>
                 <div className="glowing-card">
-                  <div className="mono" style={{ fontSize: 10, color: 'var(--accent-cyan)', fontWeight: 700, marginBottom: 4 }}>TxLINE SOCKET STATUS</div>
+                  <div className="mono" style={{ fontSize: 10, color: 'var(--accent-cyan)', fontWeight: 700, marginBottom: 4 }}>LIVE MATCH FEED</div>
                   <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--ink-primary)' }}>CONNECTED • 104 MATCHES</div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function Showcase() {
             <div className="showcase-item">
               <span className="showcase-label">Signal Status Badges</span>
               <div className="showcase-box" style={{ gap: 8, flexWrap: 'wrap' }}>
-                <span className="badge-glass active">TxLINE WS OK</span>
+                <span className="badge-glass active">Live Feed OK</span>
                 <span className="badge-glass" style={{ borderColor: 'rgba(16, 185, 129, 0.4)', color: 'var(--signal-success)' }}>Solana PWA</span>
               </div>
             </div>
