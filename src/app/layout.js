@@ -29,7 +29,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <style>{`
           @media (prefers-reduced-motion: no-preference) {
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
           }
         `}</style>
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <WalletProviders>
           {children}
           <ThemeController />
