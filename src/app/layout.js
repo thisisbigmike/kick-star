@@ -5,6 +5,7 @@ import './styles/header.css';
 import './styles/hero.css';
 import './styles/gallery.css';
 import './styles/closing.css';
+import './styles/animations.css';
 
 export const viewport = {
   themeColor: '#0B0A10',
@@ -29,26 +30,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <style>{`
-          @media (prefers-reduced-motion: no-preference) {
-            @supports ((animation-timeline: view()) and (animation-range: entry)) {
-              @keyframes reveal-up {
-                from { opacity: 0; transform: translateY(40px) scale(0.95); }
-                to { opacity: 1; transform: translateY(0) scale(1); }
-              }
-              .feature-card, .faq-item, .cta-band, .component-showcase, .tuner-card {
-                view-timeline: --reveal block;
-                animation: reveal-up auto linear forwards;
-                animation-timeline: --reveal;
-                animation-range: entry 10% entry 45%;
-              }
-            }
-          }
-        `}</style>
-      </head>
-      <body suppressHydrationWarning>
+    <html lang="en">
+      <head></head>
+      <body>
         <WalletProviders>
           {children}
           <ThemeController />
