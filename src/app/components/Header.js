@@ -140,7 +140,7 @@ export default function Header() {
               <span style={{ fontSize: 8.5, fontWeight: 700, color: 'var(--accent-cyan)', letterSpacing: '0.15em', textTransform: 'uppercase', lineHeight: 1 }}>Football Companion</span>
             </div>
           </div>
-          <button className="nav-toggle" type="button" aria-expanded={menuOpen} aria-controls="mobile-nav" aria-label="Open navigation menu" onClick={(e) => { e.stopPropagation(); setMenuOpen(!menuOpen); }}>
+          <button className="nav-toggle" type="button" aria-expanded={menuOpen} aria-controls="mobile-nav" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={(e) => { e.stopPropagation(); setMenuOpen(!menuOpen); }}>
             <span></span><span></span><span></span>
           </button>
           

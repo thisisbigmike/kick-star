@@ -211,8 +211,6 @@
   display: none;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 5px;
   width: 44px;
   height: 44px;
   border: 1px solid var(--border-line);
@@ -220,32 +218,17 @@
   color: var(--ink-primary);
   background: var(--bg-card);
   transition: all 0.2s ease;
+  padding: 0;
+  cursor: pointer;
 }
 
-.nav-toggle span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  border-radius: 99px;
-  background: currentColor;
-  transition: transform 0.25s var(--spring-bouncy), opacity 0.2s ease;
-}
-
-.site-header.menu-open .nav-toggle {
+.nav-toggle:hover {
   background: var(--bg-surface-raised);
   border-color: var(--ink-secondary);
 }
 
-.site-header.menu-open .nav-toggle span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.site-header.menu-open .nav-toggle span:nth-child(2) {
-  opacity: 0;
-}
-
-.site-header.menu-open .nav-toggle span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.nav-toggle:active {
+  transform: scale(0.95);
 }
 
 /* Mobile Nav Drawer */
